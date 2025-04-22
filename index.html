@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
+
+<script>
+/* global nn */
+
+  
+  async function setup() {
+    const url = 'https://dog.ceo/api/breeds/image/random'
+    const res = await fetch(url)
+    console.log(res).json()
+    const jsin = await res.json ()
+    console.log(json.message)
+  }
+
+nn.creare('img')
+  .set('src', json.message)
+  .addTo('body')
+
+nn.on('load', setup)
+</script>
