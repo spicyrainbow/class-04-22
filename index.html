@@ -5,12 +5,31 @@
 
   
   async function setup() {
+    
+  const key = APIkey
+  
     const url = 'https://dog.ceo/api/breeds/image/random'
+
     const res = await fetch(url)
-    console.log(res).json()
-    const jsin = await res.json ()
-    console.log(json.message)
+    const json = await res.json ()
+    const title = json.articles[i].title
+    const desc = json.articles[i].description
+    
+    const words = []
+    for (let i = 0; i < json.articles.length; i++) {
+      const title = json.articles[i].title
+      // split words
+      const titleWords = title.split(' ')
+      const descWords = desc.split(' ')
+      words.push(...titleWords)
+      words.push(...descWords)
+
+    }
+
+    
   }
+  
+  
 
 nn.creare('img')
   .set('src', json.message)
